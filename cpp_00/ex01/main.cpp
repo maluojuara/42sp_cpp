@@ -6,7 +6,7 @@
 /*   By: malcosta <malcosta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/10 13:54:56 by malcosta          #+#    #+#             */
-/*   Updated: 2026/09/10 19:48:55 by malcosta         ###   ########.fr       */
+/*   Updated: 2026/09/16 17:43:42 by malcosta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,10 @@ int	main (void)
 			break ;
 		}
 		if (command == "ADD")
-			phonebook.addContact();
+		{
+			if (phonebook.addContact() == false)
+				break;
+		}
 		else if (command == "SEARCH")
 		{
 			phonebook.searchContacts();
@@ -38,8 +41,6 @@ int	main (void)
 			
 		else if (command == "EXIT")
 			break ;
-		else
-			std::cout << "Invalid command. Please try again." << std::endl;
 	}
 
 	return (0);

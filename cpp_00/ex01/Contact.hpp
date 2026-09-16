@@ -6,7 +6,7 @@
 /*   By: malcosta <malcosta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/10 13:55:35 by malcosta          #+#    #+#             */
-/*   Updated: 2026/09/10 15:57:57 by malcosta         ###   ########.fr       */
+/*   Updated: 2026/09/16 17:39:13 by malcosta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #define CONTACT_HPP
 
 #include <string>
-#include <iostream>
 
 class Contact
 {

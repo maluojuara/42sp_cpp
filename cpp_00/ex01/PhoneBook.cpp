@@ -6,7 +6,7 @@
 /*   By: malcosta <malcosta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/10 13:55:07 by malcosta          #+#    #+#             */
-/*   Updated: 2026/09/10 19:43:38 by malcosta         ###   ########.fr       */
+/*   Updated: 2026/09/16 17:37:47 by malcosta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ PhoneBook::PhoneBook()
 	index_add = 0;
 }
 
-bool	isEmpty(std::string str)
+static bool	isEmpty(std::string str)
 {
 	for (int i = 0; i < (int)str.length(); i++)
 	{
@@ -28,7 +28,7 @@ bool	isEmpty(std::string str)
 	return true;
 }
 
-void	PhoneBook::addContact()
+bool	PhoneBook::addContact()
 {
 	std::string firstName;
 	std::string lastName;
@@ -42,7 +42,7 @@ void	PhoneBook::addContact()
 		std::getline(std::cin, firstName);
 
 		if (std::cin.eof())
-			return;
+			return (false);
 
 		if (isEmpty(firstName))
 			std::cout << "Field cannot be empty!" << std::endl;
@@ -54,7 +54,7 @@ void	PhoneBook::addContact()
 		std::getline(std::cin, lastName);
 		
 		if (std::cin.eof())
-			return;
+			return (false);
 
 		if (isEmpty(lastName))
 			std::cout << "Field cannot be empty!" << std::endl;
@@ -66,7 +66,7 @@ void	PhoneBook::addContact()
 		std::getline(std::cin, nickname);
 
 		if (std::cin.eof())
-			return;
+			return (false);
 
 		if (isEmpty(nickname))
 			std::cout << "Field cannot be empty!" << std::endl;
@@ -78,7 +78,7 @@ void	PhoneBook::addContact()
 		std::getline(std::cin, phoneNumber);
 
 		if (std::cin.eof())
-			return;
+			return (false);
 
 		if (isEmpty(phoneNumber))
 			std::cout << "Field cannot be empty!" << std::endl;
@@ -90,7 +90,7 @@ void	PhoneBook::addContact()
 		std::getline(std::cin, darkestSecret);
 
 		if (std::cin.eof())
-			return;
+			return (false);
 
 		if (isEmpty(darkestSecret))
 			std::cout << "Field cannot be empty!" << std::endl;
@@ -107,9 +107,11 @@ void	PhoneBook::addContact()
 	index_add++;
 	if (index_add >= 8)
 		index_add = 0;
+	
+	return (true);
 }
 
-std::string formatField(std::string field)
+static std::string formatField(std::string field)
 {
 	if (field.length() > 10)
 		return field.substr(0, 9) + ".";
@@ -180,7 +182,7 @@ void	PhoneBook::searchContacts()
 		std::stringstream ss(index_to_display);
 		ss >> index;
 
-		if (ss.fail())
+		if (ss.fail() || !ss.eof())
 		{
 			std::cout << "Invalid input. Please enter a number." << std::endl;
 			continue;

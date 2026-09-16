@@ -6,7 +6,7 @@
 /*   By: malcosta <malcosta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/10 13:55:15 by malcosta          #+#    #+#             */
-/*   Updated: 2026/09/10 19:21:07 by malcosta         ###   ########.fr       */
+/*   Updated: 2026/09/16 17:39:16 by malcosta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include <iomanip>
 #include <sstream>
 #include <cctype>
+#include <iostream>
 
 class PhoneBook
 {
@@ -27,7 +28,7 @@ class PhoneBook
 
 	public:
 		PhoneBook();
-		void	addContact();
+		bool	addContact();
 		void	displayContacts();
 		void	displaySpecificContact(int index);
 		void	searchContacts();
