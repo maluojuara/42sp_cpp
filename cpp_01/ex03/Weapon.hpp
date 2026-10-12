@@ -6,7 +6,7 @@
 /*   By: malcosta <malcosta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/22 16:24:17 by malcosta          #+#    #+#             */
-/*   Updated: 2026/09/22 18:20:00 by malcosta         ###   ########.fr       */
+/*   Updated: 2026/09/23 14:36:26 by malcosta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,7 @@ class Weapon
 	
 	public:
 		Weapon(std::string type);
-		~Weapon();
-		const std::string &getType();
+		const std::string &getType() const;
 		void	setType(std::string type);
 };
 

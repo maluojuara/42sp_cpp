@@ -6,7 +6,7 @@
 /*   By: malcosta <malcosta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/22 18:12:18 by malcosta          #+#    #+#             */
-/*   Updated: 2026/09/22 18:16:41 by malcosta         ###   ########.fr       */
+/*   Updated: 2026/09/23 14:41:19 by malcosta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,13 @@ class HumanB
 {
 	private:
 		std::string name;
-		Weapon weapon;
+		Weapon *weapon;
 	
 	public:
-		HumanB();
-		~HumanB();
+		HumanB(std::string name);
 
 		void	attack();
+		void	setWeapon(Weapon &weapon);
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: malcosta <malcosta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/22 18:12:14 by malcosta          #+#    #+#             */
-/*   Updated: 2026/09/22 18:16:47 by malcosta         ###   ########.fr       */
+/*   Updated: 2026/09/23 14:41:13 by malcosta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,10 @@ class HumanA
 {
 	private:
 		std::string name;
-		Weapon	weapon;
+		Weapon	&weapon;
 		
 	public:
-		HumanA(Weapon weapon);
-		~HumanA();
+		HumanA(std::string name, Weapon &weapon);
 
 		void	attack();
 };
